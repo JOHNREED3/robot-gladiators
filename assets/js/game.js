@@ -1,5 +1,6 @@
 // var playerName = 'Clank McKrank';
 var playerName = window.prompt("What is your robot's name?");
+// brake;
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
@@ -11,7 +12,7 @@ var enemyAttack = 12;
 // fight function
 var fight = function (enemyName) {
 	// repeat and execute as long as the enemy-robot is alive
-	while(enemyHealth > 0) {
+	while(playerHealth > 0 && enemyHealth > 0) {
 
 		// ask player if they'd like to fight or run
 		var promptFight = window.prompt(
@@ -36,6 +37,7 @@ var fight = function (enemyName) {
 			// check enemy's health
 			if (enemyHealth <= 0) {
 				window.alert(enemyName + ' has died!');
+				break;
 			} else {
 				window.alert(enemyName + ' still has ' + enemyHealth + ' health left.');
 			}
@@ -56,6 +58,7 @@ var fight = function (enemyName) {
 			// check player's health
 			if (playerHealth <= 0) {
 				window.alert(playerName + ' has died!');
+				break;
 			} else {
 				window.alert(playerName + ' still has ' + playerHealth + ' health left.');
 			}
@@ -68,7 +71,9 @@ var fight = function (enemyName) {
 			if (confirmSkip) {
 				window.alert(playerName + ' has decided to skip this fight. Goodbye!');
 				// subtract money from playerMoney for skipping
-				playerMoney = playerMoney - 2;
+				playerMoney = playerMoney - 10;
+				console.log("playerMoney", playerMoney)
+				break;
 			}
 			// if no (false), ask question again by running fight() again
 			else {
