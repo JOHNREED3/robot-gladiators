@@ -7,11 +7,6 @@ var enemyNames = ['Roborto', 'Amy Android', 'Robo Trumble'];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-console.log(enemyNames);
-console.log(enemyNames.length);
-console.log(enemyNames[0]);
-console.log(enemyNames[3]);
-
 // fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
   while (playerHealth > 0 && enemyHealth > 0) {
@@ -71,6 +66,10 @@ var fight = function(enemyName) {
 
 // function to star a new game
 var startGame = function() {
+  // reset player stats
+  playerHealth = 100;
+  playerAttack = 10;
+  playerMoney = 10;
   for (var i = 0; i < enemyNames.length; i++) {
     // if player is still alive, keep fighting
     if (playerHealth > 0) {
@@ -95,6 +94,16 @@ var startGame = function() {
       break;
     }
   }
+
+  //function to end the entire game
+  var endGame = function() {
+  window.alert("The game has now ended. Let's see how you did!");
+  };
+  //play again
   startGame();
-}
+};
+
+
+
+startGame();
 
