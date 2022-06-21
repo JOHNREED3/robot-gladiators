@@ -69,7 +69,7 @@ var startGame = function() {
       window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
 
       // pick new enemy to fight based on the index of the enemyNames array
-      debugger;
+      //debugger;
       var pickedEnemyObj = enemyInfo[i];
 
       // reset pickedEnemyObj.health before starting new fight
