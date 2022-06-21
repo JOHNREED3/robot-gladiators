@@ -103,7 +103,5 @@ var startGame = function() {
   startGame();
 };
 
-
-
 startGame();
 
