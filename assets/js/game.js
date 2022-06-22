@@ -96,7 +96,7 @@ var startGame = function() {
     if (playerInfo.health > 0) {
       // let player know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
       window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
-      debugger;
+      // debugger;
 
       // pick new enemy to fight based on the index of the enemyInfo array
       var pickedEnemyObj = enemyInfo[i];
@@ -158,17 +158,15 @@ var shop = function() {
   );
 
   // use switch case to carry out action
+  shopOptionPrompt = parseInt(shopOptionPrompt);
   switch (shopOptionPrompt) {
-    case 'REFILL':
-    case 'refill':
+    case 1:
       playerInfo.refillHealth();
       break;
-    case 'UPGRADE':
-    case 'upgrade':
+    case 2:
       playerInfo.upgradeAttack();
       break;
-    case 'LEAVE':
-    case 'leave':
+    case 3:
       window.alert('Leaving the store.');
 
       // do nothing, so function will end
